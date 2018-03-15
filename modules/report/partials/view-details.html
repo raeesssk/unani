@@ -1,0 +1,595 @@
+<style type="text/css">
+.demo-item {
+  position: fixed;
+  top: 250px;
+  left: 50px;
+  width: 200px;
+  height: 30px;
+  background: #fff;
+  padding: 5px;
+  color: #1f1f1f;
+  border: 1px solid #444;
+  border-left: 1px solid #444;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+  box-sizing: border-box;
+}
+
+#demoItem1 {
+  top: 220px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem2 {
+  top: 260px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem3 {
+  top: 300px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem4 {
+  top: 340px;
+  left: 150px;
+  z-index: 999;
+}
+</style>
+
+<div id="demoItem1" class='demo-item'>
+  DAMWI <b style="color : green;">{{smList.damwi}}</b> SANGUINE
+</div>
+<div id="demoItem2" class='demo-item'>
+  BALGHAMI <b style="color : green;">{{smList.balghami}}</b> PHLEGMATIC
+</div>
+<div id="demoItem3" class='demo-item'>
+  SAFRAWI <b style="color : green;">{{smList.safrawi}}</b> CHOLERIC
+</div>
+<div id="demoItem4" class='demo-item'>
+  SAWDAVI <b style="color : green;">{{smList.sawdavi}}</b> MELANCHOLIC
+</div>
+
+<div class="row" ng-init= "getAll();">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Patient Details</h4>
+                <!-- <p class="category">List of Sanguine Phlegmatic</p> -->
+            </div>
+            <br>
+            <div class="content table-responsive table-full-width">
+                <table class="table">
+                  <tbody>
+                      <tr>
+                          <td colspan="2"><strong>ID: </strong>{{smList.patient_id}}</td>
+                          <td colspan="5"><strong>Name: </strong>{{smList.p_name}}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="3"><strong>Father's Name Native Place: </strong>{{smList.p_f_name}}</td>
+                          <td colspan="2"><strong>Mother's Name Native Place: </strong>{{smList.p_m_name}}</td>
+                          <td><strong>Place of Birth: </strong>{{smList.place_of_birth}}</td>
+                          <td><strong>Native Place: </strong>{{smList.native_place}}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><strong>Date of Birth: </strong>{{smList.date_of_birth | date:mediumDate}}</td>
+                          <td><strong>Sun Sign: </strong>{{smList.sun_sign}}</td>
+                          <td colspan="2"><strong>Age Years: </strong>{{smList.age_years}}</td>
+                          <td><strong>Gender: </strong>{{smList.gender}}</td>
+                          <td><strong>LMP: </strong>{{smList.lmp}}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><strong>Phone no.: </strong>{{smList.phone_no}}</td>
+                          <td colspan="5"><strong>Address: </strong>{{smList.address}}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2"><strong>Occupation: </strong>{{smList.occupation}}</td>
+                          <td><strong>Socio-Economic Status: </strong>{{smList.socio_eco_status}}</td>
+                          <td><strong>Dietray Habits: </strong>{{smList.dietray_habits}}</td>
+                          <td><strong>Pulse: </strong>{{smList.pulse}}</td>
+                          <td colspan="2"><strong>Blood Group: </strong>{{smList.blood_group}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+                <table class="table">
+                  <body>
+                      <tr>
+                          <td>Sr. No.</td>
+                          <td>Ajnas</td>
+                          <td>Parameters</td>
+                          <td colspan="4">MIZAJ(Temperament)</td>
+                      </tr>
+                      <tr>
+                          <td class="bg-info text-success" colspan="3"></td>
+                          <td class="bg-info text-success">DAMWI</td>
+                          <td class="bg-info text-success">BALGHAMI</td>
+                          <td class="bg-info text-success">SAFRAWI</td>
+                          <td class="bg-info text-success">SAWDAVI</td>
+                      </tr>
+                      <tr>
+                          <td>1</td>
+                          <td>Adilla-i-Lams</td>
+                          <td>1.1) Touch (Feel of the body)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_1_1_0 === 3}">Hot & Moist Smooth</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_1_1_0 === 2}">Cold & Moist Smooth</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_1_1_0 === 4}">Hot & Dry Rough</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_1_1_0 === 1}">Cold & Dry Rough</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="2">2</td>
+                          <td rowspan="2">Adilla-i-Lahm-o-shahm</td>
+                          <td>2.1) Muscularity (Whole Body Skeletal Muscle)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_1_0 === 4}">Muscular<br>F:>35.4%<br>M:>44.1%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_1_0 === 3}">Flabby (Adipose)<br>F:30.4-35.3%<br>M:39.4-44.0%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_1_0 === 2}">Lean<br>F:24.3-30.3%<br>M:33.3-39.3%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_1_0 === 1}">Very Lean<br>F:<24.3%<br>M:< 33.3% </td>
+                      </tr>
+                      <tr>
+                          <td>2.2) Adiposity (Whole Body Subcutaneous Fat)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_2_0 === 2}">Shahm<br>F:21-33%<br>M:8-19%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_2_0 === 4}">Shahm<br>F:>39%<br>M:>25%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_2_0 === 3}">Shahm<br>F:33-39%<br>M:19-25%</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_2_2_0 === 1}">Shahm<br>F:<21%<br>M:< 8% </td>
+                      </tr>
+                      <tr>
+                          <td rowspan="6">3</td>
+                          <td rowspan="6">Adillah-e-sha'r</td>
+                          <td>3.1) Scalp & Body Hair</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>3.1.1) Distribution</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_1 === 3}">Normal</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_1 === 1}">Scanty</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_1 === 2}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_1 === 4}">Excessive</td>
+                      </tr>
+                      <tr>
+                          <td>3.1.2) Growth</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_2 === 3}">Average</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_2 === 1}">Slow</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_2 === 4}">Rapid</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_2 === 1}">Slow</td>
+                      </tr>
+                      <tr>
+                          <td>3.1.3) Texture</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_3 === 2}">Fine</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_3 === 2}">Fine</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_3 === 4}">Coarse</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_3 === 4}">Coarse</td>
+                      </tr>
+                      <tr>
+                          <td>3.1.4) Shape</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_4 === 3}">Wavy</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_4 === 2}">Straight</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_4 === 2}">Straight</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_4 === 4}">Curly</td>
+                      </tr>
+                      <tr>
+                          <td>3.1.5) Color</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_5 === 2}">Brown</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_5 === 2}">Brown</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_5 === 3}">Brown/Black</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_3_1_5 === 4}">Black</td>
+                      </tr>
+                      <tr>
+                          <td>4</td>
+                          <td>Adilla-i-Lawn-e-Jild</td>
+                          <td>4.1) Skin Color</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_4_1_0 === 3}">Towards Reddish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_4_1_0 === 2}">Towards Whitish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_4_1_0 === 4}">Towards Yellowish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_4_1_0 === 1}">Towards Blackish</td>
+                      </tr>
+                      <tr>
+                          <td>5</td>
+                          <td>Adilla-i-Hay'at</td>
+                          <td>5.1) Physique</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_5_1_0 === 3}">Well built, broad chest, blood vessels prominent</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_5_1_0 === 2}">Average built, wide chest, blood vessels non-prominent</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_5_1_0 === 4}">Thin built, narrow chest, blood vessels prominent</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_5_1_0 === 1}">Thin built, narrow chest, blood vessels superficial</td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td>Adilla-i-harkat-o-Sukun</td>
+                          <td>6.1) Receptivity of Organs (receptivity to the surrounding with environment or with food)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_6_1_0 === 3}">Gadually warmed (gradual response to heat) and Slowly cooled (gradual response to cold)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_6_1_0 === 2}">Quickly cooled (quick response to cold) and Slowly warmed (slow response to heat)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_6_1_0 === 4}">Quickly warmed (quick response to heat) and Slowly cooled (slow response to cold)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_6_1_0 === 1}">Gadually cooled (gradual response to cold) and Slowly warmed (slow response to heat)</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="3">7</td>
+                          <td rowspan="3">Adilla-i-Nawm-o-Yaqza</td>
+                          <td>7.1) Sleep and Wakefulness</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>7.1.1) Quality and Duration</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_1 === 3}">Moderate & Sound Sleep 6-8 Hrs</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_1 === 2}">Excessive & Sound Sleep more than 8 Hrs</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_1 === 4}">Less and Restless Sleep Less than 6 Hrs</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_1 === 1}">Less & interrupted Sleep</td>
+                      </tr>
+                      <tr>
+                          <td>7.1.2) Dreams (Dominant Colour and Character)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_2 === 3}">Red Sentimental & Romantic</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_2 === 2}">White Peaceful dream</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_2 === 4}">Yellow and fiery Passionate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_7_1_2 === 1}">Black and fearful Scary</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="19">8</td>
+                          <td>Adilla-i-Af'al-i-A'za'</td>
+                          <td>8.1) Functional state of organs</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_1_0 === 3}">Moderately active</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_1_0 === 2}">Lethargic and Sluggish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_1_0 === 4}">Hyper Active</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_1_0 === 1}">Sluggish</td>
+                      </tr>
+                      <tr>
+                          <td>Adilla-i-Nabz</td>
+                          <td>8.2) Pulse</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_2_0 === 3}">Nabz Azim (Strong & Voluminous)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_2_0 === 2}">Nabz Bati wa Laiyyin(Slow & Soft)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_2_0 === 4}">Nabz Sari wa Mutawatir(Rapid & in succession)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_2_0 === 1}">Nabz Sulb Wa Bati (Hard & Slow)</td>
+                      </tr>
+                      <tr>
+                          <td>Adilla-i-Za'iqa</td>
+                          <td>8.3) Taste</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_3_0 === 3}">Sweet</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_3_0 === 1}">Tasteless</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_3_0 === 4}">Bitter</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_3_0 === 2}">Sour</td>
+                      </tr>
+                      <tr>
+                          <td>Adillah-i-Zawq</td>
+                          <td>8.4) food liking (Provide refrence)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_4_0 === 1}">Cold & Dry Salty</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_4_0 === 4}">Hot & dry Spicy</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_4_0 === 2}">Cold & wet Sour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_4_0 === 3}">Hot & wet Sweet</td>
+                      </tr>
+                      <tr>
+                          <td>Adilla-i-'Atash</td>
+                          <td>8.5) Thirst</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_5_0 === 2}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_5_0 === 1}">Less</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_5_0 === 4}">Extreme</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_5_0 === 3}">Excessive</td>
+                      </tr>
+                      <tr>
+                          <td>Adilla-i-Ishtiha'</td>
+                          <td>8.6) Appetite</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_6_0 === 3}">Good</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_6_0 === 2}">Poor</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_6_0 === 4}">Very Good/ Excessive</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_6_0 === 1}">Very Poor</td>
+                      </tr>
+                      <tr>
+                          <td>Adilla-i-Hazm</td>
+                          <td>8.7) Digestion</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_7_0 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_7_0 === 2}">Slow</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_7_0 === 4}">Very Good</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_7_0 === 1}">Poor</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="8">Adilla-i-Nafsaniyya</td>
+                          <td>8.8) Nervous System Active (MOTOR)</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>8.8.1) Activeness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_1 === 3}">Active<br>i-when climbing stairs do you usually take them two at a time?<br>ii-do you usually finish your meals hurriedly for a reason?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_1 === 1}">Sluggish<br>i-are you inclined to be slow in your actions?<br>ii-are you frequently lacking in energy and motivation?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_1 === 4}">Hyper Active<br>i-are you always on the go?<br>ii-do other people find it hard to keep pace with you?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_1 === 2}">Bidirectional<br>i-do you sometime feel energitic and self motivated?<br>ii-most of the time you sit and do nothing?</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.2) Adventurousness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_2 === 3}">Moderate<br>i-do you quite enjoy taking risks?<br>ii-would you prefer a job involving travelling and variety even if its insecure?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_2 === 1}">Low<br>i-do you always wear a safety belt while travelling?<br>ii-would you prefer a job with less challenges and secure?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_2 === 4}">High<br>i-Would you enjoy fast driving?<br>ii-would you do almost anything for a dare?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_2 === 2}">Bidirectional</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.3) Aggressiveness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_3 === 3}">Moderate<br>i-do you ever get so angry than you swear and yell?<br>ii-do you often grind your teeth consciously or unconsciously?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_3 === 1}">Low<br>i-do you avoid fights or rough games?<br>ii-would you rather agree on something then argue about it?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_3 === 4}">High<br>i-do you get so angry that you slam doors and smash things?<br>ii-do you often indulge in arguments?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_3 === 2}">Bidirectional<br>i-are you considered a gentle person?<br>ii-do you like to watch something which includes fight or extreme behavior?</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.4) Boldness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_4 === 3}">Moderate<br>i-are you pretty sure of yourself?<br>ii-do you feel confident when someone appraises you?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_4 === 2}">Low<br>i-do you think you have little to be proud of?<br>ii-are you shy and self-conscious most of the time?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_4 === 4}">High<br>i-do you usually feel you can accomplish what you want?<br>ii-are you pretty confident of your appearance and attitude, in general?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_4 === 1}">Very Low<br>i-do you consider yourself a failure?<br>ii-do you suffer from feelings of inferiority?</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.5) Gait</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_5 === 3}">Fast</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_5 === 1}">Slow</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_5 === 4}">Very Fast</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_5 === 2}">Bidirectional</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.6) Fatigability</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_6 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_6 === 1}">Very Early</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_6 === 4}">Late</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_6 === 2}">Early</td>
+                      </tr>
+                      <tr>
+                          <td>8.8.7) Yawning</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_7 === 3}">Infrequent</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_7 === 1}">Very Frequent</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_7 === 4}">Rarely</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_8_7 === 2}">Frequent</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="4">Adilla-i-Af'al-i-A'za' (Functional state of organs)</td>
+                          <td>8.9) Nervous System Activity (SENSORY)</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>8.9.1) Feeling of Heaviness? (After nightfall)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_1 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_1 === 4}">High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_1 === 2}">Mild</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_1 === 1}">Negligible</td>
+                      </tr>
+                      <tr>
+                          <td>8.9.2) Receptivity External Senses</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_2 === 3}">High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_2 === 2}">Low</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_2 === 4}">Very High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_2 === 1}">Very Low</td>
+                      </tr>
+                      <tr>
+                          <td>8.9.3) Alertness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_3 === 3}">High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_3 === 2}">Low</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_3 === 4}">Very High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_8_9_3 === 1}">Very Low</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="9">9</td>
+                          <td rowspan="9">Adilla-e-Istifragh</td>
+                          <td>9.1) Excretion</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>9.1.1) Bawl (Urine) Colour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_1 === 4}">Reddish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_1 === 2}">Whitish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_1 === 3}">Yellowish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_1 === 1}">Greyish</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.2) Bawl (Urine) Odour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_2 === 3}">Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_2 === 2}">Mild</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_2 === 4}">Very Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_2 === 1}">Negligible</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.3) Araq (Sweat) Quantity</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_3 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_3 === 2}">Less</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_3 === 4}">Excessive</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_3 === 1}">Very Less</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.4) Araq (Sweat) Colour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_4 === 4}">Reddish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_4 === 2}">Whitish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_4 === 3}">Yellowish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_4 === 1}">Greyish</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.5) Araq (Sweat) Odour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_5 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_5 === 2}">Mild</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_5 === 4}">Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_5 === 1}">Negligible</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.6) Baraz Colour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_6 === 3}">Reddish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_6 === 2}">Whitish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_6 === 4}">Yellowish</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_6 === 1}">Greyish</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.7) Baraz Odour</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_7 === 3}">Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_7 === 2}">Mild</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_7 === 4}">Very Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_7 === 1}">Very Mild</td>
+                      </tr>
+                      <tr>
+                          <td>9.1.8) Baraz Quantity</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_8 === 3}">Moderate</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_8 === 2}">Less</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_8 === 4}">Strong</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_9_1_8 === 1}">Very Less</td>
+                      </tr>
+                      <tr>
+                          <td rowspan="13">10</td>
+                          <td rowspan="13">Adilla-i-Quwa Nafsaniyya</td>
+                          <td>10.1) Psychological Activity</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>10.1.1) Intensity of Anger</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_1 === 3}">Moderate<br>i-do you stamp your feet and kick things when you are in rage?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_1 === 1}">Low<br>i-would you holdback from engaging in fights?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_1 === 4}">High<br>i-have you ever felt sometime genuinely to kill somebody?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_1 === 2}">Bidirectional<br>i-do you usually manage to be patient even with fools?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.2) Depth of Sadness and Sorrow (Let go or hold on)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_2 === 2}">Moderate<br>i-do you derive a good deal of happiness from your life?<br>ii-do you often suffer from loneliness?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_2 === 3}">High<br>i-do you seem to have more than of your share of bad luck?<br>ii-do you feel lonely even when with other people?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_2 === 1}">Low<br>i-In general are you satisfied with your life?<br>ii-do you generaly feel in good spirits?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_2 === 4}">Very High<br>i-when things go wrong, do you wish you were dead?<br>ii-do you feel miserable for no reason?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.3) Initiativity</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_3 === 3}">Moderate<br>i-do you like to be the first person to initiate group activity?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_3 === 2}">Low<br>i-do you usually avoid to take first step in any group activity?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_3 === 4}">High<br>i-are you always the first person to initiate group activity?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_3 === 1}">Very Low<br>i-you never initiate group activity?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.4) Sensitivity</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_4 === 3}">Moderate<br>i-do you get upset when you get to know about unfortunate people?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_4 === 4}">High<br>i-would you refrain from expressing your opinion if others might be offended by it?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_4 === 2}">Low<br>i-Do you express your opinion freely irrespective of other persons feeling?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_4 === 1}">Least<br>i-do you like to play pranks on other people?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.5) Irritability</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_5 === 3}">High<br>i-do you feel somewhat rattled if things do not go as planned?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_5 === 1}">Low<br>i-are you usually calm and not easily upset?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_5 === 4}">Very High<br>i-are you easily irritated by things being out of place/order?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_5 === 2}">Moderate<br>i-are you get seldom irritated by things being out of place/order?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.6) Optimism (positive thinking)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_6 === 3}">Moderate<br>i-would you try for a task even if it seems unachievable?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_6 === 2}">Low<br>i-Do you give up easily in unfavourable circumstanses?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_6 === 4}">High<br>i-despite of any difficulties you think you can accomplish task?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_6 === 1}">Very Low<br>i-are you always unsure to accomplish the task?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.7) Sympathy</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_7 === 4}">High<br>i-would you help someone monetary even if you are in tight position?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_7 === 3}">Moderate<br>i-do you tend to help people who are sick or unfortunate?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_7 === 2}">Low<br>i-do you feel content and find pleasure in helping others?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_7 === 1}">Very Low<br>i-are you detached in your dealings with people even if its required to be considerate?</td>
+                      </tr>
+                      <tr>
+                          <td>10.1.8) Apprehensions (worry about future)</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_8 === 2}">Low<br>i-do you often worry about your future?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_8 === 3}">Moderate<br>i-do you always worry about your future?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_8 === 1}">Very Low<br>i-do you never plan about your future?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_1_8 === 4}">Very High<br>i-do you always feel insecure about your future?</td>
+                      </tr>
+                      <tr>
+                          <td>10.2) ASSOCIATIONAL</td>
+                          <td colspan="4"></td>
+                      </tr>
+                      <tr>
+                          <td>10.2.1) Intelligence</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_1 === 3}">Normal</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_1 === 1}">Low</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_1 === 4}">High</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_1 === 2}">Moderate</td>
+                      </tr>
+                      <tr>
+                          <td>10.2.2) Decision taking power</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_2 === 3}">Quick</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_2 === 2}">Slow</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_2 === 4}">Very Quick</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_2 === 1}">Very Slow</td>
+                      </tr>
+                      <tr>
+                          <td>10.2.3) Firmness</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_3 === 3}">Moderate<br>i-do you argue a point if you know you are right?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_3 === 2}">Low<br>i-are you easily convinced by others?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_3 === 4}">High<br>i-do you never change your decision?</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_10_2_3 === 1}">Very Low<br>i-are you always uncertain about your opinions?</td>
+                      </tr>
+                      <tr>
+                          <td>11</td>
+                          <td>Adilla-i-fusul</td>
+                          <td>11.1) Seasonal Comfortability</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_11_1_0 === 1}">Winter</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_11_1_0 === 4}">Summer</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_11_1_0 === 1}">Winter</td>
+                          <td ng-class="{'bg-success text-danger':smList.q_11_1_0 === 2}">Rainy</td>
+                      </tr>
+                      <tr>
+                          <td colspan="3">Depending upon the history and symptoms of the patients</td>
+                          <td>DAMWI<br><b style="color: green;">{{smList.damwi}}</b><br>SANGUINE</td>
+                          <td>BALGHAMI<br><b style="color: green;">{{smList.balghami}}</b><br>PHLEGMATIC</td>
+                          <td>SAFRAWI<br><b style="color: green;">{{smList.safrawi}}</b><br>CHOLERIC</td>
+                          <td>SAWDAVI<br><b style="color: green;">{{smList.sawdavi}}</b><br>MELANCHOLIC</td>
+                      </tr>
+                  </body>
+                </table>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td colspan="6" align="center">ANTHROPOMETRY MEASUREMENTS</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td colspan="4" align="center">Skin Folds (in mm)</td>
+                    </tr>
+                    <tr>
+                      <td>Stretch Stature (Height in cm)<br>{{smList.stretch_stature}}</td>
+                      <td>Body Mass (Weight in kg)<br>{{smList.body_mass}}</td>
+                      <td>Triceps<br>{{smList.skin_folds_triceps}}</td>
+                      <td>Subscapular<br>{{smList.skin_folds_subscapular}}</td>
+                      <td>Supraspinale<br>{{smList.skin_folds_supraspinale}}</td>
+                      <td>Medial Calf<br>{{smList.skin_folds_medial_calf}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" align="center">Limb Girths (in cm)</td>
+                      <td colspan="3" align="center">Bone Breadths Bipicondylar (in cm)</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">Flexed Arm<br>{{smList.flexed_arm}}</td>
+                      <td>Calf<br>{{smList.calf}}</td>
+                      <td colspan="2">Humerus<br>{{smList.humerus}}</td>
+                      <td>Femur<br>{{smList.femur}}</td>
+                    </tr>
+                    <tr>
+                      <td>Body Composition</td>
+                      <td>% General Fat<br>{{smList.general_fat}}</td>
+                      <td>Body Age<br>{{smList.body_age}}</td>
+                      <td>BMI<br>{{smList.bmi}}</td>
+                      <td>RM K Cal<br>{{smList.rm_k_cal}}</td>
+                      <td>% Visceral Fat<br>{{smList.visceral_fat}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <table class="table">
+                          <tr>
+                            <td>Subcutaneous Fat in %</td>
+                            <td>Whole Body<br>{{smList.fat_whole_body}}</td>
+                            <td>Trunk<br>{{smList.fat_trunk}}</td>
+                            <td>Legs<br>{{smList.fat_legs}}</td>
+                            <td>Arms<br>{{smList.fat_arms}}</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td colspan="3">
+                        <table class="table">
+                          <tr>
+                            <td>Skeletal Muscle in %</td>
+                            <td>Whole Body<br>{{smList.mus_whole_body}}</td>
+                            <td>Trunk<br>{{smList.mus_trunk}}</td>
+                            <td>Legs<br>{{smList.mus_legs}}</td>
+                            <td>Arms<br>{{smList.mus_arms}}</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">Temperament By Questionnaire<br>{{smList.temp_by_quest}}</td>
+                      <td colspan="2">Temperament By Somatoplot<br>{{smList.temp_by_soma}}</td>
+                      <td colspan="2">Somatoplot Score<br>{{smList.soma_score}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

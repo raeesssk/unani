@@ -1,0 +1,422 @@
+<style type="text/css">
+.demo-item {
+  position: fixed;
+  top: 250px;
+  left: 50px;
+  width: 200px;
+  height: 30px;
+  background: #fff;
+  padding: 5px;
+  color: #1f1f1f;
+  border: 1px solid #444;
+  border-left: 1px solid #444;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+  box-sizing: border-box;
+}
+
+#demoItem1 {
+  top: 220px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem2 {
+  top: 260px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem3 {
+  top: 300px;
+  left: 150px;
+  z-index: 999;
+}
+#demoItem4 {
+  top: 340px;
+  left: 150px;
+  z-index: 999;
+}
+</style>
+
+<script type="text/javascript">
+    
+    $('.carousel').carousel({
+        interval: false
+    }); 
+    
+</script>
+
+<div id="demoItem1" class='demo-item'>
+  DAMWI <b style="color : green;">{{patient.damwi}}</b> SANGUINE
+</div>
+<div id="demoItem2" class='demo-item'>
+  BALGHAMI <b style="color : green;">{{patient.balghami}}</b> PHLEGMATIC
+</div>
+<div id="demoItem3" class='demo-item'>
+  SAFRAWI <b style="color : green;">{{patient.safrawi}}</b> CHOLERIC
+</div>
+<div id="demoItem4" class='demo-item'>
+  SAWDAVI <b style="color : green;">{{patient.sawdavi}}</b> MELANCHOLIC
+</div>
+
+<div class="card">
+    <div class="header">
+        <h4 class="title">New Patient</h4>
+    </div>
+    <div class="content">
+        <!-- Start Home Page Slider -->
+    <section id="home">
+      <!-- Carousel -->
+      <div id="main-slide" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+          <li data-target="#main-slide" data-slide-to="1"></li>
+          <li data-target="#main-slide" data-slide-to="2"></li>
+          <li data-target="#main-slide" data-slide-to="3"></li>
+        </ol> -->
+        <!--/ Indicators end-->
+
+        <!-- Carousel inner -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div id="personal" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="p_name" class="form-control border-input" placeholder="Name" ng-model="patient.p_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Father's Name Native Place</label>
+                            <input type="text" id="p_f_name" class="form-control border-input" ng-model="patient.p_f_name">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Mother's Name Native Place</label>
+                            <input type="text" id="p_m_name" class="form-control border-input" ng-model="patient.p_m_name">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Place of Birth</label>
+                            <input type="text" id="place_of_birth" class="form-control border-input" ng-model="patient.place_of_birth">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Native Place</label>
+                            <input type="text" id="native_place" class="form-control border-input" ng-model="patient.native_place">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="text" id="date_of_birth" class="form-control border-input" ng-model="patient.date_of_birth">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Sun Sign</label>
+                            <input type="text" id="sun_sign" class="form-control border-input" ng-model="patient.sun_sign">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Age Years</label>
+                            <select class="form-control border-input" id="age_years" ng-model="patient.age_years">
+                                <option value="" >Select Age Years</option>
+                                <option >Sin-e-Numu (Upto 25 Years)</option>
+                                <option >Sin-e-Shabab (25 to 40 Years)</option>
+                                <option >Sin-e-Kuhulat (41 to 60 Years)</option>
+                                <option >Sin-e-Shekhukhat (above 60 Years)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control border-input" id="gender" ng-model="patient.gender">
+                                <option value="" >Select Gender</option>
+                                <option >Male</option>
+                                <option >Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>LMP</label>
+                            <input type="text" id="lmp" class="form-control border-input" ng-model="patient.lmp">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Phone no.</label>
+                            <input type="text" id="phone_no" class="form-control border-input" ng-model="patient.phone_no">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea id="address" class="form-control border-input" ng-model="patient.address" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <input type="text" id="occupation" class="form-control border-input" ng-model="patient.occupation">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Socio-Economic Status</label>
+                            <select class="form-control border-input" id="socio_eco_status" ng-model="patient.socio_eco_status">
+                                <option value="" >Select Socio-Economic Status</option>
+                                <option >HIG</option>
+                                <option >MIG</option>
+                                <option >LIG</option>
+                                <option >BPL</option>
+                                <option >NA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Dietray Habits</label>
+                            <select class="form-control border-input" id="dietray_habits" ng-model="patient.dietray_habits">
+                                <option value="" >Select Dietray Habits</option>
+                                <option >Pure Veg</option>
+                                <option >Veg and Non-Veg Both</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Pulse</label>
+                            <input type="text" id="pulse" class="form-control border-input" ng-model="patient.pulse">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Blood Group</label>
+                            <input type="text" id="blood_group" class="form-control border-input" ng-model="patient.blood_group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="item">
+            <div id="q110" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row" style="margin-bottom: 20px; padding-top: 100px" >
+                    <div class="col-md-12">
+                        <div class="form-group bg-default" style="border-radius: 50px; border: 2px solid black;">
+                            <center><label style="font-size: 15pt;" >1) Adilla-i-Lams - 1.1) Touch (Feel of the body)</label></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q1_1_0" id="1_1_0_1" ng-click="get1_1_0_1()"> 1) Hot & Moist Smooth </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q1_1_0" id="1_1_0_2" ng-click="get1_1_0_2()"> 2) Cold & Moist Smooth </button></center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q1_1_0" id="1_1_0_3" ng-click="get1_1_0_3()"> 3) Hot & Dry Rough </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q1_1_0" id="1_1_0_4" ng-click="get1_1_0_4()"> 4) Cold & Dry Rough </button></center>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="item">
+            <div id="q110" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row" style="margin-bottom: 20px; padding-top: 50px" >
+                    <div class="col-md-12">
+                        <div class="form-group bg-default" style="border-radius: 50px; border: 2px solid black;">
+                            <center><label style="font-size: 15pt;" >2) Adilla-i-Lahm-o-shahm - 2.1) Muscularity (Whole Body Skeletal Muscle)</label></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_1_0" id="2_1_0_1" ng-click="get2_1_0_1()"> 1) Muscular<br>F:>35.4%<br>M:>44.1% </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_1_0" id="2_1_0_2" ng-click="get2_1_0_2()"> 2) Flabby (Adipose)<br>F:30.4-35.3%<br>M:39.4-44.0% </button></center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_1_0" id="2_1_0_3" ng-click="get2_1_0_3()"> 3) Lean<br>F:24.3-30.3%<br>M:33.3-39.3% </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_1_0" id="2_1_0_4" ng-click="get2_1_0_4()"> 4) Very Lean<br>F:<24.3%<br>M:<33.3%  </button></center>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="item">
+            <div id="q110" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row" style="margin-bottom: 20px; padding-top: 50px" >
+                    <div class="col-md-12">
+                        <div class="form-group bg-default" style="border-radius: 50px; border: 2px solid black;">
+                            <center><label style="font-size: 15pt;" >2) Adilla-i-Lahm-o-shahm - 2.2) Adiposity (Whole Body Subcutaneous Fat)</label></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_2_0" id="2_2_0_1" ng-click="get2_2_0_1()"> 1) Shahm<br>F:21-33%<br>M:8-19% </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_2_0" id="2_2_0_2" ng-click="get2_2_0_2()"> 2) Shahm<br>F:>39%<br>M:>25% </button></center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_2_0" id="2_2_0_3" ng-click="get2_2_0_3()"> 3) Shahm<br>F:33-39%<br>M:19-25% </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q2_2_0" id="2_2_0_4" ng-click="get2_2_0_4()"> 4) Shahm<br>F:<21%<br>M:<8% </button></center>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="item">
+            <div id="q110" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row" style="margin-bottom: 20px; padding-top: 100px" >
+                    <div class="col-md-12">
+                        <div class="form-group bg-default" style="border-radius: 50px; border: 2px solid black;">
+                            <center><label style="font-size: 15pt;" >3) Adillah-e-sha'r - 3.1) Scalp & Body Hair - 3.1.1) Distribution</label></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_1" id="3_1_1_1" ng-click="get3_1_1_1()"> 1) Normal </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_1" id="3_1_1_2" ng-click="get3_1_1_2()"> 2) Scanty </button></center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_1" id="3_1_1_3" ng-click="get3_1_1_3()"> 3) Moderate </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_1" id="3_1_1_4" ng-click="get3_1_1_4()"> 4) Excessive </button></center>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="item">
+            <div id="q110" style="height: 450px; padding-left: 80px; padding-right: 80px; padding-top: 15px; padding-bottom: 15px;">
+                <div class="row" style="margin-bottom: 20px; padding-top: 100px" >
+                    <div class="col-md-12">
+                        <div class="form-group bg-default" style="border-radius: 50px; border: 2px solid black;">
+                            <center><label style="font-size: 15pt;" >3) Adillah-e-sha'r - 3.1) Scalp & Body Hair - 3.1.2) Growth</label></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_2" id="3_1_2_1" ng-click="get3_1_2_1()"> 1) Average </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_2" id="3_1_2_2" ng-click="get3_1_2_2()"> 2) Slow </button></center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_2" id="3_1_2_3" ng-click="get3_1_2_3()"> 3) Rapid </button></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center><button class="btn btn-lg btn-default" style="width: 300px" class="q3_1_2" id="3_1_2_4" ng-click="get3_1_2_4()"> 4) Slow </button></center>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#main-slide" data-slide="prev">
+          <!-- <span><i class="fa fa-angle-left"></i></span> -->
+        </a>
+        <a class="right carousel-control" href="#main-slide" data-slide="next">
+          <!-- <span><i class="fa fa-angle-right"></i></span> -->
+        </a>
+      </div>
+    </section>
+    <br>
+        <div class="row"><CENTER>
+            <!-- <button type="button" class="btn btn-default" id="btnsave1" ng-click="q1()">Personal Details</button>
+            <button type="button" class="btn btn-default" id="btnsave2" ng-click="q2()">Q.1.1</button>
+            <button type="button" class="btn btn-default" id="btnsave3" ng-click="q3()">Q.2.1</button>
+            <button type="button" class="btn btn-default" id="btnsave4" ng-click="q4()">Q.2.2</button>
+            <button type="button" class="btn btn-default" id="btnsave5" ng-click="q5()">Q.3.1.1</button>
+            <button type="button" class="btn btn-default" id="btnsave6" ng-click="q6()">Q.3.1.2</button>
+            <button type="button" class="btn btn-default" id="btnsave7" ng-click="q7()">Q.3.1.3</button>
+            <button type="button" class="btn btn-default" id="btnsave8" ng-click="q8()">Q.3.1.4</button>
+            <button type="button" class="btn btn-default" id="btnsave9" ng-click="q9()">Q.3.1.5</button>
+            <button type="button" class="btn btn-default" id="btnsave10" ng-click="q10()">Q.4.1</button>
+            <button type="button" class="btn btn-default" id="btnsave11" ng-click="q11()">Q.5.1</button>
+            <button type="button" class="btn btn-default" id="btnsave12" ng-click="q12()">Q.6.1</button>
+            <button type="button" class="btn btn-default" id="btnsave13" ng-click="q13()">Q.7.1.1</button>
+            <button type="button" class="btn btn-default" id="btnsave14" ng-click="q14()">Q.7.1.2</button>
+            <button type="button" class="btn btn-default" id="btnsave15" ng-click="q15()">Q.8.1</button>
+            <button type="button" class="btn btn-default" id="btnsave16" ng-click="q16()">Q.8.2</button>
+            <button type="button" class="btn btn-default" id="btnsave17" ng-click="q17()">Q.8.3</button>
+            <button type="button" class="btn btn-default" id="btnsave18" ng-click="q18()">Q.8.4</button>
+            <button type="button" class="btn btn-default" id="btnsave19" ng-click="q19()">Q.8.5</button>
+            <button type="button" class="btn btn-default" id="btnsave20" ng-click="q20()">Q.8.6</button>
+            <button type="button" class="btn btn-default" id="btnsave21" ng-click="q21()">Q.8.7</button>
+            <button type="button" class="btn btn-default" id="btnsave22" ng-click="q22()">Q.8.8.1</button>
+            <button type="button" class="btn btn-default" id="btnsave23" ng-click="q23()">Q.8.8.2</button>
+            <button type="button" class="btn btn-default" id="btnsave24" ng-click="q24()">Q.8.8.3</button>
+            <button type="button" class="btn btn-default" id="btnsave25" ng-click="q25()">Q.8.8.4</button>
+            <button type="button" class="btn btn-default" id="btnsave26" ng-click="q26()">Q.8.8.5</button>
+            <button type="button" class="btn btn-default" id="btnsave27" ng-click="q27()">Q.8.8.6</button>
+            <button type="button" class="btn btn-default" id="btnsave28" ng-click="q28()">Q.8.8.7</button>
+            <button type="button" class="btn btn-default" id="btnsave29" ng-click="q29()">Q.8.9.1</button>
+            <button type="button" class="btn btn-default" id="btnsave30" ng-click="q30()">Q.8.9.2</button>
+            <button type="button" class="btn btn-default" id="btnsave31" ng-click="q31()">Q.8.9.3</button>
+            <button type="button" class="btn btn-default" id="btnsave32" ng-click="q32()">Q.9.1.1</button>
+            <button type="button" class="btn btn-default" id="btnsave33" ng-click="q33()">Q.9.1.2</button>
+            <button type="button" class="btn btn-default" id="btnsave34" ng-click="q34()">Q.9.1.3</button>
+            <button type="button" class="btn btn-default" id="btnsave35" ng-click="q35()">Q.9.1.4</button>
+            <button type="button" class="btn btn-default" id="btnsave36" ng-click="q36()">Q.9.1.5</button>
+            <button type="button" class="btn btn-default" id="btnsave37" ng-click="q37()">Q.9.1.6</button>
+            <button type="button" class="btn btn-default" id="btnsave38" ng-click="q38()">Q.9.1.7</button>
+            <button type="button" class="btn btn-default" id="btnsave39" ng-click="q39()">Q.9.1.8</button>
+            <button type="button" class="btn btn-default" id="btnsave40" ng-click="q40()">Q.10.1.1</button>
+            <button type="button" class="btn btn-default" id="btnsave41" ng-click="q41()">Q.10.1.2</button>
+            <button type="button" class="btn btn-default" id="btnsave42" ng-click="q42()">Q.10.1.3</button>
+            <button type="button" class="btn btn-default" id="btnsave43" ng-click="q43()">Q.10.1.4</button>
+            <button type="button" class="btn btn-default" id="btnsave44" ng-click="q44()">Q.10.1.5</button>
+            <button type="button" class="btn btn-default" id="btnsave45" ng-click="q45()">Q.10.1.6</button>
+            <button type="button" class="btn btn-default" id="btnsave46" ng-click="q46()">Q.10.1.7</button>
+            <button type="button" class="btn btn-default" id="btnsave47" ng-click="q47()">Q.10.1.8</button>
+            <button type="button" class="btn btn-default" id="btnsave48" ng-click="q48()">Q.10.2.1</button>
+            <button type="button" class="btn btn-default" id="btnsave49" ng-click="q49()">Q.10.2.2</button>
+            <button type="button" class="btn btn-default" id="btnsave50" ng-click="q50()">Q.10.2.3</button>
+            <button type="button" class="btn btn-default" id="btnsave51" ng-click="q51()">Q.11.1</button>
+            <button type="button" class="btn btn-default" id="btnsave52" ng-click="q52()">Measurement</button> -->
+            <button type="button" class="btn btn-success btn-fill" id="btnsave" ng-click="()">Save</button>
+            <button type="button" class="btn btn-danger btn-fill" id="btncancel" onclick="window.location = '#/patient'" >Back</button></CENTER>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,359 @@
+<div class="row" ng-init= "getSP();getPS();getCS();getMS();getSC();getPC();getCP();getMP();getSM();getPM();getCM();getMC();getTotalMatched();getTotalUnmatched();">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-warning text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Sanguine Phlegmatic</p>
+                            {{sp}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/sp" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Phlegmatic Sanguine</p>
+                            {{ps}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/ps" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-danger text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Choleric Sanguine</p>
+                            {{cs}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/cs" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Melancholic Sanguine</p>
+                            {{ms}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/ms" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-warning text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Sanguine Choleric</p>
+                            {{sc}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/sc" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Phlegmatic Choleric</p>
+                            {{pc}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/pc" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-danger text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Choleric Phlegmatic</p>
+                            {{cp}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/cp" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Melancholic Phlegmatic</p>
+                            {{mp}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/mp" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-warning text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Sanguine Melancholic</p>
+                            {{sm}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/sm" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-success text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Phlegmatic Melancholic</p>
+                            {{pm}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/pm" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-danger text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Choleric Melancholic</p>
+                            {{cm}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/cm" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Melancholic Choleric</p>
+                            {{mc}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/mc" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-sm-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-warning text-center">
+                            <i class="ti-harddrives"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Total Matched</p>
+                            {{totalmatched}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/totalmatched" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="icon-big icon-info text-center">
+                            <i class="ti-harddrives"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <div class="numbers">
+                            <p>Total Unmatched</p>
+                            {{totalunmatched}}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <hr />
+                    <div class="stats">
+                        <a href="#/totalunmatched" style="color:grey;"><i class="ti-eye"></i> View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

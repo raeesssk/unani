@@ -1,0 +1,51 @@
+<div class="row" ng-init= "getAll();">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Melancholic Phlegmatic</h4>
+                <p class="category">List of Melancholic Phlegmatic</p>
+            </div>
+            <div class="col-md-12">
+                <input type="text" id="searchtext" class="form-control border-input" placeholder="Search Here..." ng-model="searchtext" onkeyup="angular.element(this).scope().getSearch();">
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Questionnaire</th>
+                        <th>Somatoplot</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sp in filteredTodos | filter : sp">
+                            <td>{{sp.patient_id}}</td>
+                            <td>{{sp.p_name}}</td>
+                            <td>{{sp.date_of_birth | date : mediumDate}}</td>
+                            <td>{{sp.gender}}</td>
+                            <td>{{sp.temp_by_quest}}</td>
+                            <td>{{sp.temp_by_soma}}</td>
+                            <td>
+                                <a href="#/details/view/{{sp.patient_id}}"><i class="ti-info-alt"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <span id="pagination_detail" ng-show="filteredTodos.length > 0" class="pagination_ds">Showing {{ filterUserend }} to {{filterUser}} of {{mpList.length}} Record's</span>
+                <span id="pagination_div" align="right" ng-show="filteredTodos.length > 0"
+                      style="float: right;margin-top: -27px;">
+                  <pagination
+                          ng-model="currentPage"
+                          total-items="mpList.length"
+                          max-size="maxSize"
+                          boundary-links="true" data-num-pages="noOfPages"
+                          items-per-page="numPerPage">
+                  </pagination>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
